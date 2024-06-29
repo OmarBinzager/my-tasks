@@ -73,9 +73,11 @@ export const GlobalProvider = ({ children }) => {
     };
 
     function allTasks(sure = false) {
+        console.log('all tasks');
         if (!sure) {
             if (isAuth != 'true') return;
         }
+        console.log('all tasks already');
         setIsLoading(true);
         if (localStorage.tasks) {
             const res = (JSON.parse(`${localStorage.tasks}`) || []).sort(
@@ -144,7 +146,6 @@ export const GlobalProvider = ({ children }) => {
                 curUserId,
                 tasks,
                 isLoading,
-                setIsLoading,
                 setSelectedTheme,
                 selectedTheme,
                 deleteTask,

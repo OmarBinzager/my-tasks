@@ -7,12 +7,12 @@ import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import Tasks from '../components/Tasks/Tasks';
 const Incomplete = () => {
 
-  const { incompleteTasks } = UseGlobalState();
   const { setIsAuthPage } = UseGlobalUpdate();
   setIsAuthPage('false');
 
   
 
+const { incompleteTasks } = UseGlobalState();
 return <Tasks title='Do It Now' tasks={incompleteTasks} />;
 }
 
