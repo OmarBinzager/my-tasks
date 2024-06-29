@@ -26,7 +26,7 @@ const Sidebar = () => {
     const handleClick = (link: string) => {
         router.push(link);
     };
-    const users: Array<object> = JSON.parse(`${localStorage.getItem('users')}`) || [];
+    const users: Array<{id:any, email:string, username:string, password:string,avatar:string}> = JSON.parse(`${localStorage.getItem('users')}`) || [];
     const userInfo = isAuth == 'true' ? users.filter((user) => user.id == curUserId)[0] : {
         avatar: '',
         username: '',

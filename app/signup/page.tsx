@@ -36,16 +36,16 @@ const page = () => {
             }
         }
     }
-    const passwordErrorRef = useRef(null);
-    const emailErrorRef = useRef(null);
-    const usernameErrorRef = useRef(null);
+    const passwordErrorRef = useRef<any>(null);
+    const emailErrorRef = useRef<any>(null);
+    const usernameErrorRef = useRef<any>(null);
 
     function createUser(username: string, email: string, password: string, avatat: string): boolean {
-        var users: Array<object> = [];
+        var users: Array<any> = [];
         if (localStorage.getItem('users')) {
             users = JSON.parse(
                 `${localStorage.getItem('users')}`
-            ) as Array<object>;
+            ) as Array<any>;
         }
         if (users.filter((user) => user.email === email)[0] !== undefined) {
             emailErrorRef.current!.textContent =

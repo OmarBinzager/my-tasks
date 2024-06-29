@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
@@ -21,25 +21,30 @@ const page = () => {
     function handlePassword(event:any) {
         setPassword(event.target.value);
     }
-    const passwordErrorRef = useRef(null);
-    const emailErrorRef = useRef(null);
+    const passwordErrorRef = useRef<any>();
+    const emailErrorRef = useRef<any>();
     function checkUser(email: string, password: string): boolean {
-        if(localStorage.getItem('users')){
+        if (
+            localStorage.getItem('users') &&
+            passwordErrorRef.current &&
+            emailErrorRef.current
+        ) {
             const users = JSON.parse(`${localStorage.getItem('users')}`);
-            const user = users.filter((user: { email: string; }) => user.email === email)[0];
+            const user = users.filter(
+                (user: { email: string }) => user.email === email
+            )[0];
             if (user) {
                 if (user.password === password) {
                     setCurUserId(user.id);
                     localStorage.setItem('curUserId', user.id);
                     return true;
                 } else {
-                    passwordErrorRef.current!.textContent =
+                    passwordErrorRef.current.textContent =
                         'The password is incorrect, please try again';
                     return false;
                 }
             } else {
-                emailErrorRef.current!.textContent =
-                    'This email does not exist';
+                emailErrorRef.current.textContent = 'This email does not exist';
                 return false;
             }
         } else {

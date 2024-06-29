@@ -54,7 +54,7 @@ const Tasks = ({
             </button>
             {!isLoading ? (
                 <div className='tasks grid'>
-                    {tasks.map((task) => {
+                    {tasks.map((task: { id: any; }) => {
                         return <Task key={task.id} task={task} />;
                     })}
                     <button
