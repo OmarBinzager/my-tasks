@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
 
-const Incomplete = () => {
+const Signin = () => {
 
     const { setCurUserId } = UseGlobalUpdate();
 
@@ -200,4 +200,4 @@ const SigninStyled = styled.div`
         }
     }
 `;
-export default Incomplete;
+export default Signin;
