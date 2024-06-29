@@ -1,6 +1,6 @@
 'use client';
 
-import { useGlobalState } from '@/app/context/globalProvider';
+import { UseGlobalState } from '@/app/context/globalProvider';
 import styled from 'styled-components';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 function Model({ content }: Props) {
-    const { closeModel, theme, setTask } = useGlobalState();
+    const { closeModel, theme, setTask } = UseGlobalState();
 
     return (
         <ModelStyled theme={theme}>

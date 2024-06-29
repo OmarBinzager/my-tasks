@@ -1,6 +1,6 @@
 'use client';
 
-import { useGlobalState, useGlobalUpdate } from '@/app/context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '@/app/context/globalProvider';
 import { add, help } from '@/app/utils/Icons';
 import React, { useEffect, useState } from 'react';
 import toast, { ToastIcon } from 'react-hot-toast';
@@ -30,7 +30,7 @@ function CreateContent({
         setTask,
         updateTask,
         curTask
-    } = useGlobalState();
+    } = UseGlobalState();
 
     let buttonText = 'Create Task';
     if (t != '' && d != '' && dat != '') {

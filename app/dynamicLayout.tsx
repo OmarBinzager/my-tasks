@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Sidebar from './components/Sidebar/Sidebar';
-import { useGlobalState } from './context/globalProvider';
+import { UseGlobalState } from './context/globalProvider';
 import GlobalStyleProvider from './Providers/GlobalStyleProviders';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 const DynamicLayout = ({ children }: Props) => {
     
-const { isAuthPage } = useGlobalState();
+const { isAuthPage } = UseGlobalState();
   return (
       <div className='w-full h-full'>
           {isAuthPage != 'true' ? (

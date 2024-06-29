@@ -176,5 +176,5 @@ export const GlobalProvider = ({ children }) => {
     );
 };
 
-export const useGlobalState = () => useContext(GlobalContext);
-export const useGlobalUpdate = () => useContext(GlobalUpdateContext);
+export const UseGlobalState = () => useContext(GlobalContext);
+export const UseGlobalUpdate = () => useContext(GlobalUpdateContext);

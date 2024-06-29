@@ -3,16 +3,16 @@
 
 
 import React from 'react'
-import { useGlobalState, useGlobalUpdate } from '../context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import Tasks from '../components/Tasks/Tasks';
 
 const page = () => {
 
-    const { setIsAuthPage } = useGlobalUpdate();
+    const { setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('false');
 
 
-const { importantTasks } = useGlobalState();
+const { importantTasks } = UseGlobalState();
 return <Tasks title='Important Tasks' tasks={importantTasks} importantPage={true} />;
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalState } from "@/app/context/globalProvider";
+import { UseGlobalState } from "@/app/context/globalProvider";
 
 import React from "react";
 import styled from "styled-components";
@@ -31,7 +31,7 @@ function Button({
   border,
   color,
 }: Props) {
-  const { theme } = useGlobalState();
+  const { theme } = UseGlobalState();
 
   return (
     <ButtonStyled

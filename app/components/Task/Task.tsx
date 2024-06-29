@@ -1,6 +1,6 @@
 "use client";
 
-import { useGlobalState } from '@/app/context/globalProvider';
+import { UseGlobalState } from '@/app/context/globalProvider';
 import React from 'react'
 import styled from 'styled-components';
 import { edit, trash } from '@/app/utils/Icons'
@@ -19,7 +19,7 @@ import formatDate from '@/app/utils/formatDate';
 
 function Task(task: any) {
     const { title, description, date, completed, id } = task.task;
-    const { theme, deleteTask, updateTask, openModel } = useGlobalState();
+    const { theme, deleteTask, updateTask, openModel } = UseGlobalState();
 
   return (
     <TaskItemStyled theme={theme}>

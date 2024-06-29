@@ -2,18 +2,18 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useGlobalState, useGlobalUpdate } from '../context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
 import { camera } from '../utils/Icons';
 const page = () => {
     const router = useRouter();
-    const { theme } = useGlobalState();
+    const { theme } = UseGlobalState();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [avatar, setAvatar] = useState('');
 
-    const { setIsAuthPage } = useGlobalUpdate();
+    const { setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('true');
 
 

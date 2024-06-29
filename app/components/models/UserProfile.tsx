@@ -1,7 +1,7 @@
 "use client"
 
 
-import { useGlobalState } from '@/app/context/globalProvider';
+import { UseGlobalState } from '@/app/context/globalProvider';
 import { add, camera } from '@/app/utils/Icons';
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components';
@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 import toast from 'react-hot-toast';
 
 function UserProfile() {
-    const { theme, curUserId, closeModel } = useGlobalState();
+    const { theme, curUserId, closeModel } = UseGlobalState();
     const user = JSON.parse(`${localStorage.getItem('users')}`).filter(
         (user:any) => user.id == curUserId
     )[0];

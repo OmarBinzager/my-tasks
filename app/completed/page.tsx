@@ -1,14 +1,14 @@
 'use client';
 
 import React from 'react';
-import { useGlobalState, useGlobalUpdate } from '../context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import Tasks from '../components/Tasks/Tasks';
 
 const page = () => {
-    const { setIsAuthPage } = useGlobalUpdate();
+    const { setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('false');
 
-    var { completedTasks, isAuth } = useGlobalState();
+    var { completedTasks, isAuth } = UseGlobalState();
     isAuth != 'true' ? (completedTasks = []) : completedTasks;
     return (
         <Tasks

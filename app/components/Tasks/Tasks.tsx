@@ -1,6 +1,6 @@
 'use client';
 
-import { useGlobalState, useGlobalUpdate } from '@/app/context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '@/app/context/globalProvider';
 import React from 'react';
 import styled from 'styled-components';
 import CreateContent from '../models/CreateContent';
@@ -22,7 +22,7 @@ const Tasks = ({
         setSelectedTheme,
         selectedTheme,
         curTask
-    } = useGlobalState();
+    } = UseGlobalState();
 
     return (
         <TaskStyled theme={theme}>

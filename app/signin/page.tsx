@@ -2,16 +2,16 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useGlobalState, useGlobalUpdate } from '../context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
 
 const page = () => {
 
-    const { setCurUserId } = useGlobalUpdate();
+    const { setCurUserId } = UseGlobalUpdate();
 
     const router = useRouter();
-    const { theme, allTasks } = useGlobalState();
-    const { setIsAuth, setIsAuthPage } = useGlobalUpdate();
+    const { theme, allTasks } = UseGlobalState();
+    const { setIsAuth, setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('true');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

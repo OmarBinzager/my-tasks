@@ -3,16 +3,16 @@
 
 
 import React from 'react'
-import { useGlobalState, useGlobalUpdate } from '../context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import Tasks from '../components/Tasks/Tasks';
 const page = () => {
 
-  const { setIsAuthPage } = useGlobalUpdate();
+  const { setIsAuthPage } = UseGlobalUpdate();
   setIsAuthPage('false');
 
   
 
-const { incompleteTasks } = useGlobalState();
+const { incompleteTasks } = UseGlobalState();
 return <Tasks title='Do It Now' tasks={incompleteTasks} />;
 }
 

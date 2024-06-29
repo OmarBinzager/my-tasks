@@ -1,5 +1,5 @@
 'use client';
-import { useGlobalState, useGlobalUpdate } from '@/app/context/globalProvider';
+import { UseGlobalState, UseGlobalUpdate } from '@/app/context/globalProvider';
 import styled from 'styled-components';
 import React from 'react';
 import {menu} from '@/app/utils/menu';
@@ -19,8 +19,8 @@ const Sidebar = () => {
         openModel,
         collapsed,
         collapseMenu,
-    } = useGlobalState();
-    const { setIsAuth, setIsAuthPage } = useGlobalUpdate();
+    } = UseGlobalState();
+    const { setIsAuth, setIsAuthPage } = UseGlobalUpdate();
     const router = useRouter();
     const pathname = usePathname();
     const handleClick = (link: string) => {
