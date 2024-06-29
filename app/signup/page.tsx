@@ -6,8 +6,9 @@ import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
 import { camera } from '../utils/Icons';
 const Signup = () => {
+    const { theme, setIsLoading } = UseGlobalState();
+    setIsLoading(true);
     const router = useRouter();
-    const { theme } = UseGlobalState();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -72,6 +73,7 @@ const Signup = () => {
     const input =
         'w-full rounded-md mt-1 mb-3 mx-1 bg-default-colorButton p-1 focus:outline-none border-1-default-borderColor';
     const label = 'block mx-1  text-default-colorTextSecondary';
+    setIsLoading(false);
     return (
         <SigninStyled theme={theme}>
             <div className='container sm:w-96 p-6'>

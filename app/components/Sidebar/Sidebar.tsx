@@ -2,7 +2,7 @@
 import { UseGlobalState, UseGlobalUpdate } from '@/app/context/globalProvider';
 import styled from 'styled-components';
 import React from 'react';
-import {menu} from '@/app/utils/menu';
+import { menu } from '@/app/utils/menu';
 import Link from 'next/link';
 import { arrowLeft, bars, login, logout, user } from '@/app/utils/Icons';
 import { usePathname, useRouter } from 'next/navigation';
@@ -19,18 +19,30 @@ const Sidebar = () => {
         openModel,
         collapsed,
         collapseMenu,
+        setIsLoading,
     } = UseGlobalState();
     const { setIsAuth, setIsAuthPage } = UseGlobalUpdate();
     const router = useRouter();
     const pathname = usePathname();
     const handleClick = (link: string) => {
+        setIsLoading(true);
         router.push(link);
+        setIsLoading(false);
     };
-    const users: Array<{id:any, email:string, username:string, password:string,avatar:string}> = JSON.parse(`${localStorage.getItem('users')}`) || [];
-    const userInfo = isAuth == 'true' ? users.filter((user) => user.id == curUserId)[0] : {
-        avatar: '',
-        username: '',
-    };
+    const users: Array<{
+        id: any;
+        email: string;
+        username: string;
+        password: string;
+        avatar: string;
+    }> = JSON.parse(`${localStorage.getItem('users')}`) || [];
+    const userInfo =
+        isAuth == 'true'
+            ? users.filter((user) => user.id == curUserId)[0]
+            : {
+                  avatar: '',
+                  username: '',
+              };
     return (
         <SidebarStyled theme={theme} collapsed={collapsed}>
             {userProfileModel && <Model content={<UserProfile />} />}
