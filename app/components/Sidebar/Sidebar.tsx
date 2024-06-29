@@ -64,6 +64,7 @@ const Sidebar = () => {
                     const link = item.link;
                     return (
                         <li
+                            key={item.id}
                             className={`nav-item  py-2 px-4 pl-8 my-1 cursor-pointer relative ${
                                 pathname === item.link ? 'active' : ''
                             }`}
