@@ -4,7 +4,7 @@ import React from 'react';
 import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import Tasks from '../components/Tasks/Tasks';
 
-const page = () => {
+const Completed = () => {
     const { setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('false');
 
@@ -19,4 +19,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Completed;

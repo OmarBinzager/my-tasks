@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { UseGlobalState, UseGlobalUpdate } from '../context/globalProvider';
 import { useRouter } from 'next/navigation';
 import { camera } from '../utils/Icons';
-const page = () => {
+const Signup = () => {
     const router = useRouter();
     const { theme } = UseGlobalState();
     const [email, setEmail] = useState('');
@@ -273,4 +273,4 @@ const SigninStyled = styled.div`
         }
     }
 `;
-export default page;
+export default Signup;
