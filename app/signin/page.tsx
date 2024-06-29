@@ -152,7 +152,7 @@ const Signin = () => {
                         continue
                     </button>
                     <p className='text-sm text-gray-300 pt-4'>
-                        You don't have an account{' '}
+                        You do not have an account{' '}
                         <span
                             className='text-blue-400 cursor-pointer'
                             onClick={() => {
