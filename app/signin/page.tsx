@@ -7,11 +7,10 @@ import { useRouter } from 'next/navigation';
 
 const Signin = () => {
 
-    const { theme, allTasks, setIsLoading } = UseGlobalState();
-    setIsLoading(true);
     const { setCurUserId } = UseGlobalUpdate();
 
     const router = useRouter();
+    const { theme, allTasks } = UseGlobalState();
     const { setIsAuth, setIsAuthPage } = UseGlobalUpdate();
     setIsAuthPage('true');
     const [email, setEmail] = useState('');
@@ -56,7 +55,6 @@ const Signin = () => {
     const input =
         'w-full rounded-md mt-1 mb-3 mx-1 bg-default-colorButton p-1 focus:outline-none border-1-default-borderColor';
     const label = 'block mx-1  text-default-colorTextSecondary';
-    setIsLoading(false);
     return (
         <SigninStyled theme={theme}>
             <div className='container sm:w-96 p-6'>

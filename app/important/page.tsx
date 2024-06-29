@@ -8,11 +8,9 @@ import Tasks from '../components/Tasks/Tasks';
 
 const Important = () => {
 
-    const { importantTasks, setIsLoading } = UseGlobalState();
-    setIsLoading(true);
     const { setIsAuthPage } = UseGlobalUpdate();
+    const { importantTasks } = UseGlobalState();
     setIsAuthPage('false');
-    setIsLoading(false);
 
 
 return <Tasks title='Important Tasks' tasks={importantTasks} importantPage={true} />;
